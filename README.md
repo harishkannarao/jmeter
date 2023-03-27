@@ -18,8 +18,20 @@ docker-compose -f docker_local/docker-compose.yml up --build -d
 mvn spring-boot:run -pl JdbcExample/JdbcApplication
 ```
 
-## Run Jmeter
+## Run Jmeter with html report
 
 ```
+jmeter -n -t REST_API_Test_Plan.jmx -l REST_API_Test_Plan.jtl -j REST_API_Test_Plan.log -e -o report
+```
 
+## Run Jmeter without html report
+
+```
+jmeter -n -t REST_API_Test_Plan.jmx -l REST_API_Test_Plan.jtl -j REST_API_Test_Plan.log
+```
+
+## Generate html report from existing jtl file
+
+```
+jmeter -g REST_API_Test_Plan.jtl -o report
 ```
