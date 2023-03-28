@@ -21,17 +21,17 @@ mvn spring-boot:run -pl JdbcExample/JdbcApplication
 ## Run Jmeter with html report
 
 ```
-jmeter -n -t REST_API_Test_Plan.jmx -l REST_API_Test_Plan.jtl -j REST_API_Test_Plan.log -e -o report
+jmeter -n -t REST_API_Test_Plan.jmx -l logs/jmeter_result.jtl -j logs/jmeter.log -e -o report
 ```
 
 ## Run Jmeter without html report
 
 ```
-jmeter -n -t REST_API_Test_Plan.jmx -l REST_API_Test_Plan.jtl -j REST_API_Test_Plan.log
+jmeter -n -t REST_API_Test_Plan.jmx -l logs/jmeter_result.jtl -j logs/jmeter.log
 ```
 
 ## Generate html report from existing jtl file
 
 ```
-jmeter -g REST_API_Test_Plan.jtl -o report
+jmeter -j logs/jmeter.log -g logs/jmeter_result.jtl -o report
 ```
