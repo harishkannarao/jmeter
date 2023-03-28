@@ -2,11 +2,11 @@
 
 JMeter script to test a CRUD REST API
 
-## Tools
+### Tools
 
 * Apache Jmeter 5.5
 
-## REST API
+### REST API
 
 CRUD API under test: https://github.com/harishkannarao/MySpringBoot
 
@@ -18,20 +18,32 @@ docker-compose -f docker_local/docker-compose.yml up --build -d
 mvn spring-boot:run -pl JdbcExample/JdbcApplication
 ```
 
-## Run Jmeter with html report
+### Run Jmeter with html report
 
 ```
-jmeter -n -t REST_API_Test_Plan.jmx -l logs/jmeter_result.jtl -j logs/jmeter.log -e -o report
+jmeter -q properties/local-sanity.properties -n -t REST_API_Test_Plan.jmx -l logs/jmeter_result.jtl -j logs/jmeter.log -e -o report
 ```
 
-## Run Jmeter without html report
+### Run Jmeter without html report
 
 ```
-jmeter -n -t REST_API_Test_Plan.jmx -l logs/jmeter_result.jtl -j logs/jmeter.log
+jmeter -q properties/local-sanity.properties -n -t REST_API_Test_Plan.jmx -l logs/jmeter_result.jtl -j logs/jmeter.log
 ```
 
-## Generate html report from existing jtl file
+### Generate html report from existing jtl file
 
 ```
 jmeter -j logs/jmeter.log -g logs/jmeter_result.jtl -o report
+```
+
+### Debugging jmeter
+
+For full debugging
+```
+jmeter -LDEBUG
+```
+
+See only http exchanges
+```
+jmeter -Lorg.apache.http=DEBUG
 ```
