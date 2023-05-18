@@ -31,7 +31,7 @@
       <OpenModelThreadGroup guiclass="OpenModelThreadGroupGui" testclass="OpenModelThreadGroup" testname="Customer CRUD Thread Group" enabled="true">
         <elementProp name="ThreadGroup.main_controller" elementType="OpenModelThreadGroupController"/>
         <stringProp name="ThreadGroup.on_sample_error">startnextloop</stringProp>
-        <stringProp name="OpenModelThreadGroup.schedule">rate(0/min) random_arrivals(30 sec) rate(100/min) random_arrivals(30 sec) rate(100/min) random_arrivals(10 sec) rate(0/min)</stringProp>
+        <stringProp name="OpenModelThreadGroup.schedule">${__P(crud.thread.profile,rate(1/min) random_arrivals(5 sec))}</stringProp>
         <stringProp name="OpenModelThreadGroup.random_seed"></stringProp>
       </OpenModelThreadGroup>
       <hashTree>
