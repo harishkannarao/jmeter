@@ -18,6 +18,10 @@ docker-compose -f docker_local/docker-compose.yml up --build -d
 mvn spring-boot:run -pl JdbcExample/JdbcApplication
 ```
 
+Open URL in browser:
+
+    http://localhost:8180/swagger-ui.html
+
 ### Cleanup logs and reports
 
 ```
